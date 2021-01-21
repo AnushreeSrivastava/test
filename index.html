@@ -14,21 +14,7 @@
 <body>
     <script>
 
-        // Handlebars.registerHelper("list", function (context, options) {
-        //     var ret = "<ul>";
-
-        //     for (var i = 0, j = context.length; i < j; i++) {
-        //         ret = ret + "<li>" + options.fn(context[i]) + "</li>";
-        //         console.log(options.fn(context[i]));
-        //         console.log(context[i]);
-
-        //     }
-
-        //     return ret + "</ul>";
-        // });
-
-        //some random comment added
-        Handlebars.registerHelper("if", function (conditional, options) {
+         Handlebars.registerHelper("if", function (conditional, options) {
             console.log(this);
             if (conditional) {
                 return options.fn(this);
