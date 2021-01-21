@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-    <title>Document</title>
+    <title>Document demo</title>
     <style>
 
     </style>
@@ -14,7 +14,7 @@
 <body>
     <script>
 
-         Handlebars.registerHelper("if", function (conditional, options) {
+        Handlebars.registerHelper("if", function (conditional, options) {
             console.log(this);
             if (conditional) {
                 return options.fn(this);
