@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+
+        // Handlebars.registerHelper("list", function (context, options) {
+        //     var ret = "<ul>";
+
+        //     for (var i = 0, j = context.length; i < j; i++) {
+        //         ret = ret + "<li>" + options.fn(context[i]) + "</li>";
+        //         console.log(options.fn(context[i]));
+        //         console.log(context[i]);
+
+        //     }
+
+        //     return ret + "</ul>";
+        // });
+
+        Handlebars.registerHelper("if", function (conditional, options) {
+            console.log(this);
+            if (conditional) {
+                return options.fn(this);
+            } else {
+                return options.inverse(this);
+            }
+        });
+
+        var template = Handlebars.compile("{{#if isActive}}<img src='star.gif' alt='Active'>{{else}}  <img src='cry.gif' alt='Inactive'>{{/if}}");
+        // execute the compiled template and print the output to the console
+        var t = template(
+            {
+                isActive: false
+            }
+        );
+        document.body.innerHTML = t;
+    </script>
+</body>
+
+</html>
